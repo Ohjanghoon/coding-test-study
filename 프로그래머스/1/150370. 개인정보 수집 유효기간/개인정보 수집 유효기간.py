@@ -28,16 +28,25 @@ def solution(today, terms, privacies):
     
         print(t_year, t_month, t_day)
         print(year, month, day)
-        # 년도 비교
-        if t_year > year:
+        
+        # 2번째 풀이
+        today_d = t_year * 12 * 28 + t_month * 28 + t_day
+        privacy_d = year * 12 * 28 + month * 28 + day
+        
+        if today_d >= privacy_d:
             answer.append(idx + 1)
-        elif t_year == year:
-            # 월 비교
-            if t_month > month:
-                answer.append(idx + 1)
-            # 일 비교
-            elif t_month == month:
-                if t_day >= day:
-                    answer.append(idx + 1)        
+        
+        # 1번째 풀이
+        # # 년도 비교
+        # if t_year > year:
+        #     answer.append(idx + 1)
+        # elif t_year == year:
+        #     # 월 비교
+        #     if t_month > month:
+        #         answer.append(idx + 1)
+        #     # 일 비교
+        #     elif t_month == month:
+        #         if t_day >= day:
+        #             answer.append(idx + 1)        
         
     return answer
