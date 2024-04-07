@@ -3,10 +3,16 @@ def solution(arr):
     
     # 2차 시도(스택 활용)
     for num in arr:
-        answer.append(num)
-        if len(answer) >= 2:
-            if answer[-2] == answer[-1]:
-                answer.pop(-1)
+        if len(answer) == 0:
+            answer.append(num)
+        elif answer[-1] == num:
+            continue
+        else:
+            answer.append(num)
+            
+        # if len(answer) >= 2:
+        #     if answer[-2] == answer[-1]:
+        #         answer.pop(-1)
     
     # 1차 시도
     # for idx in range(len(arr)):
